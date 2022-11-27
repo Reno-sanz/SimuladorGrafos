@@ -50,9 +50,9 @@ function genTableStats(nodes) {
       let a=nodes[i],b=nodes[i].conections[j];
       let auxString = document.createElement('div');
       auxString.innerHTML=b.name+", ";
-      if (Math.abs(a.similar-b.similar)==0 && i!=j) {
+      if (Math.abs(a.similar-b.similar)==0) {
         auxString.setAttribute("id","verde");
-      }else if(Math.abs(a.similar-b.similar)==1 && i!=j){
+      }else if(Math.abs(a.similar-b.similar)==1){
         auxString.setAttribute("id","naranja");
       }else{
         auxString.setAttribute("id","rojo");
