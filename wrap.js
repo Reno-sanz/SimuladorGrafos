@@ -1,8 +1,10 @@
 let tableStats = document.getElementById('subtableStats');
 sort();
+merge();
 
 function merge() {
   console.clear();
+  setVals(myNodes);
   conect(myNodes);
   reDrawLines(myNodes);
   genTableStats(myNodes);
@@ -16,15 +18,17 @@ function sort() {
     myNodes[i].coory =random2+20;
     myNodes[i].fmt.style.top = random2+"px";
     myNodes[i].fmt.style.left = random1+"px";
+    console.log(myNodes[i].name+' : '+myNodes[i].valorations);
+  }
+}
+function setVals(myNodes) {
+  for (let i = 0, len = myNodes.length; i < len; i++) {
     myNodes[i].valorations[0] = getRandomInt(0,10);
     myNodes[i].valorations[1] = getRandomInt(0,10);
     myNodes[i].valorations[2] = getRandomInt(0,10);
-    console.log(myNodes[i].name+' : '+myNodes[i].valorations);
   }
-  conect(myNodes);
-  reDrawLines(myNodes);
-  genTableStats(myNodes);
 }
+
 
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
